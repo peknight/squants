@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Compile') {
             steps {
-                sh 'sbt clean compile'
+                sh '''sbt 'clean; compile' '''
             }
         }
         stage('Test') {
@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Publish Local') {
             steps {
-                sh 'sbt publishLocal'
+                sh 'sbt +publishLocal'
             }
         }
         stage('Publish') {
