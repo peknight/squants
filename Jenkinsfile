@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Publish') {
             steps {
-                sh 'sbt publish'
+                sh 'sbt +publish'
             }
         }
     }
